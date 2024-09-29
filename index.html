@@ -3,243 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NeoAstral - Discover the Future</title>
+    <title>NeoAstral.icu - Cosmic Consciousness Books</title>
     <style>
-        /* Global Styles */
-        * {
+        :root {
+            --primary-color: #7b2cbf;
+            --secondary-color: #3c096c;
+            --text-color: #e0e0e0;
+            --background-color: #10002b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            z-index: 100;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.3s;
-        }
-
-        header h1:hover {
-            letter-spacing: 2px;
-        }
-
         .container {
-            margin-top: 100px;
-            padding: 30px;
-            width: 100%;
             max-width: 1200px;
-            text-align: center;
-        }
-
-        .intro {
-            margin-bottom: 50px;
-        }
-
-        .intro h2 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            margin-top: 20px;
-            line-height: 1.8;
-            opacity: 0.8;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 35px;
-            font-size: 1rem;
-            color: #ffffff;
-            background: linear-gradient(45deg, #ff512f, #dd2476);
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
-        }
-
-        /* Features Section */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .feature-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 300px;
-            background: rgba(255, 255, 255, 0.1);
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 10px;
-            backdrop-filter: blur(8px);
+        }
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #9d4edd;
+        }
+        h1 {
             text-align: center;
-            transition: transform 0.3s;
+            color: #9d4edd;
+            font-size: 2.5em;
+            margin-bottom: 30px;
         }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
         }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
+        .book-card {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+        .book-cover {
+            width: 150px;
+            height: 225px;
             margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-
-        .feature-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            opacity: 0.8;
+        .book-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
-
-        /* Floating Icons for Dynamic Effect */
-        .floating-icon {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            background: #ffffff;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        .book-author {
+            font-style: italic;
+            margin-bottom: 10px;
         }
-
-        .icon-1 {
-            top: 20%;
-            left: 10%;
+        .book-price {
+            font-weight: bold;
+            color: #9d4edd;
         }
-
-        .icon-2 {
-            top: 60%;
-            right: 15%;
-            animation-delay: -2s;
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
         }
-
-        .icon-3 {
-            bottom: 10%;
-            left: 75%;
-            animation-delay: -4s;
+        #search-input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
         }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        #search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
         }
-
-        .floating-icon:hover {
-            background: linear-gradient(135deg, #ff512f, #dd2476);
-            transform: scale(1.1);
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .intro h2 {
-                font-size: 2rem;
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
-
-            .intro p {
-                font-size: 1rem;
-            }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                padding: 10px 25px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .intro h2 {
-                font-size: 1.8rem;
-            }
-
-            .btn {
-                padding: 10px 20px;
+            .book-cover {
+                width: 120px;
+                height: 180px;
             }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <h1>NeoAstral</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#bestsellers">Bestsellers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
     </header>
-
     <div class="container">
-        <section class="intro">
-            <h2>Explore Beyond the Stars</h2>
-            <p>Welcome to NeoAstral, where innovation meets the cosmos. We are pushing the boundaries of what's possible by blending technology with the limitless potential of the universe. Join us on a journey of discovery, transformation, and future-forward advancements.</p>
-            <a href="#" class="btn">Get Started</a>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>Quantum Technologies</h3>
-                <p>We’re at the forefront of quantum advancements, harnessing the power of subatomic particles to revolutionize computing, encryption, and more.</p>
+        <h1>NeoAstral.icu Cosmic Library</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for books...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="book-grid">
+            <div class="book-card">
+                <img src="/api/placeholder/150/225" alt="Astral Projection Mastery" class="book-cover">
+                <div class="book-title">Astral Projection Mastery</div>
+                <div class="book-author">by Dr. Stella Cosmos</div>
+                <div class="book-price">$24.99</div>
             </div>
-            <div class="feature-card">
-                <h3>Artificial Intelligence</h3>
-                <p>Our AI solutions are designed to redefine how machines think, learn, and adapt in real time—creating a smarter, more intuitive future.</p>
+            <div class="book-card">
+                <img src="/api/placeholder/150/225" alt="The Quantum Self" class="book-cover">
+                <div class="book-title">The Quantum Self</div>
+                <div class="book-author">by Zephyr Mindwave</div>
+                <div class="book-price">$19.99</div>
             </div>
-            <div class="feature-card">
-                <h3>Immersive Experiences</h3>
-                <p>With cutting-edge AR and VR technologies, we’re creating immersive environments that blend the digital and physical worlds seamlessly.</p>
+            <div class="book-card">
+                <img src="/api/placeholder/150/225" alt="Cosmic Consciousness Unveiled" class="book-cover">
+                <div class="book-title">Cosmic Consciousness Unveiled</div>
+                <div class="book-author">by Luna Starlight</div>
+                <div class="book-price">$29.99</div>
             </div>
-        </section>
+            <div class="book-card">
+                <img src="/api/placeholder/150/225" alt="The Akashic Records" class="book-cover">
+                <div class="book-title">The Akashic Records</div>
+                <div class="book-author">by Orion Seer</div>
+                <div class="book-price">$22.99</div>
+            </div>
+        </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchButton = document.getElementById('search-button');
+            const searchInput = document.getElementById('search-input');
 
-    <!-- Floating Icons -->
-    <div class="floating-icon icon-1"></div>
-    <div class="floating-icon icon-2"></div>
-    <div class="floating-icon icon-3"></div>
+            searchButton.addEventListener('click', function() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const bookCards = document.querySelectorAll('.book-card');
 
+                bookCards.forEach(card => {
+                    const title = card.querySelector('.book-title').textContent.toLowerCase();
+                    const author = card.querySelector('.book-author').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
