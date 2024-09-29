@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NeoAstral - Discover the Future</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s;
+        }
+
+        header h1:hover {
+            letter-spacing: 2px;
+        }
+
+        .container {
+            margin-top: 100px;
+            padding: 30px;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .intro {
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            font-size: 1rem;
+            color: #ffffff;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Floating Icons for Dynamic Effect */
+        .floating-icon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .icon-2 {
+            top: 60%;
+            right: 15%;
+            animation-delay: -2s;
+        }
+
+        .icon-3 {
+            bottom: 10%;
+            left: 75%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .floating-icon:hover {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .intro h2 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NeoAstral</h1>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Explore Beyond the Stars</h2>
+            <p>Welcome to NeoAstral, where innovation meets the cosmos. We are pushing the boundaries of what's possible by blending technology with the limitless potential of the universe. Join us on a journey of discovery, transformation, and future-forward advancements.</p>
+            <a href="#" class="btn">Get Started</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>Quantum Technologies</h3>
+                <p>We’re at the forefront of quantum advancements, harnessing the power of subatomic particles to revolutionize computing, encryption, and more.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Artificial Intelligence</h3>
+                <p>Our AI solutions are designed to redefine how machines think, learn, and adapt in real time—creating a smarter, more intuitive future.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Immersive Experiences</h3>
+                <p>With cutting-edge AR and VR technologies, we’re creating immersive environments that blend the digital and physical worlds seamlessly.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icon icon-1"></div>
+    <div class="floating-icon icon-2"></div>
+    <div class="floating-icon icon-3"></div>
+
+</body>
+</html>
+
