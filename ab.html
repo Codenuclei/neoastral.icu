@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoAstral.icu - About Us</title>
+    <style>
+        :root {
+            --primary-color: #7b2cbf;
+            --secondary-color: #3c096c;
+            --text-color: #e0e0e0;
+            --background-color: #10002b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #9d4edd;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #9d4edd;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .team-member {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .team-member-info h3 {
+            margin: 0 0 10px 0;
+            color: #9d4edd;
+        }
+        .team-member-info p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+            }
+            .team-member img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#bestsellers">Bestsellers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>About NeoAstral.icu</h1>
+        <p>Welcome to NeoAstral.icu, your premier destination for books on astral projection, cosmic consciousness, and spiritual growth. We are passionate about providing high-quality literature that expands the mind and nurtures the soul.</p>
+        <p>Our carefully curated collection spans a wide range of topics, from ancient wisdom to cutting-edge consciousness studies. We believe that knowledge is the key to unlocking human potential, and our mission is to make this transformative information accessible to all.</p>
+        
+        <h2>Our Team</h2>
+        <div class="team-member">
+            <img src="/api/placeholder/100/100" alt="Dr. Stella Cosmos">
+            <div class="team-member-info">
+                <h3>Dr. Stella Cosmos</h3>
+                <p>Founder & Chief Visionary Officer</p>
+                <p>An expert in astral projection and consciousness studies, Dr. Cosmos brings decades of research and personal experience to NeoAstral.icu.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="/api/placeholder/100/100" alt="Zephyr Mindwave">
+            <div class="team-member-info">
+                <h3>Zephyr Mindwave</h3>
+                <p>Head of Content Curation</p>
+                <p>With a background in quantum physics and eastern philosophy, Zephyr ensures our book selection is both scientifically grounded and spiritually enriching.</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="/api/placeholder/100/100" alt="Luna Starlight">
+            <div class="team-member-info">
+                <h3>Luna Starlight</h3>
+                <p>Community Engagement Manager</p>
+                <p>A gifted intuitive and experienced meditation teacher, Luna fosters connection and growth within our vibrant community of readers.</p>
+            </div>
+        </div>
+        
+        <h2>Our Mission</h2>
+        <p>At NeoAstral.icu, we strive to:</p>
+        <ul>
+            <li>Provide access to transformative knowledge</li>
+            <li>Foster a community of like-minded explorers</li>
+            <li>Support authors at the forefront of consciousness research</li>
+            <li>Contribute to the evolution of human consciousness</li>
+        </ul>
+        
+        <p>Join us on this exciting journey of discovery and growth. Explore our collection, connect with our community, and unlock the mysteries of consciousness with NeoAstral.icu.</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                member.addEventListener('click', function() {
+                    const name = this.querySelector('h3').textContent;
+                    alert('Learn more about ' + name);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
