@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoAstral.icu - Bestsellers</title>
+    <style>
+        :root {
+            --primary-color: #7b2cbf;
+            --secondary-color: #3c096c;
+            --text-color: #e0e0e0;
+            --background-color: #10002b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #9d4edd;
+        }
+        h1 {
+            text-align: center;
+            color: #9d4edd;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .bestseller-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .bestseller-item {
+            display: flex;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .bestseller-item:hover {
+            transform: translateY(-5px);
+        }
+        .bestseller-cover {
+            width: 100px;
+            height: 150px;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .bestseller-info {
+            flex-grow: 1;
+        }
+        .bestseller-title {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .bestseller-author {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .bestseller-description {
+            font-size: 0.9em;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+        .bestseller-price {
+            font-weight: bold;
+            color: #9d4edd;
+        }
+        .bestseller-rank {
+            font-size: 2em;
+            font-weight: bold;
+            color: #9d4edd;
+            margin-right: 20px;
+            align-self: center;
+        }
+        @media (max-width: 768px) {
+            .bestseller-item {
+                flex-direction: column;
+            }
+            .bestseller-cover {
+                align-self: center;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .bestseller-rank {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#bestsellers">Bestsellers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Bestsellers</h1>
+        <div class="bestseller-list">
+            <div class="bestseller-item">
+                <div class="bestseller-rank">1</div>
+                <img src="/api/placeholder/100/150" alt="Astral Projection Mastery" class="bestseller-cover">
+                <div class="bestseller-info">
+                    <div class="bestseller-title">Astral Projection Mastery</div>
+                    <div class="bestseller-author">by Dr. Stella Cosmos</div>
+                    <div class="bestseller-description">Unlock the secrets of out-of-body experiences with this comprehensive guide.</div>
+                    <div class="bestseller-price">$24.99</div>
+                </div>
+            </div>
+            <div class="bestseller-item">
+                <div class="bestseller-rank">2</div>
+                <img src="/api/placeholder/100/150" alt="The Quantum Self" class="bestseller-cover">
+                <div class="bestseller-info">
+                    <div class="bestseller-title">The Quantum Self</div>
+                    <div class="bestseller-author">by Zephyr Mindwave</div>
+                    <div class="bestseller-description">Explore the intersection of quantum physics and consciousness.</div>
+                    <div class="bestseller-price">$19.99</div>
+                </div>
+            </div>
+            <div class="bestseller-item">
+                <div class="bestseller-rank">3</div>
+                <img src="/api/placeholder/100/150" alt="Cosmic Consciousness Unveiled" class="bestseller-cover">
+                <div class="bestseller-info">
+                    <div class="bestseller-title">Cosmic Consciousness Unveiled</div>
+                    <div class="bestseller-author">by Luna Starlight</div>
+                    <div class="bestseller-description">A journey into the depths of universal awareness and cosmic connection.</div>
+                    <div class="bestseller-price">$29.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bestsellerItems = document.querySelectorAll('.bestseller-item');
+            bestsellerItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const title = this.querySelector('.bestseller-title').textContent;
+                    alert('Viewing details for: ' + title);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
