@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             --text-color: #e0e0e0;
             --background-color: #10002b;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -18,44 +20,53 @@
             background-color: var(--background-color);
             color: var(--text-color);
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+
         header {
             background-color: var(--secondary-color);
             padding: 20px 0;
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             display: flex;
             justify-content: center;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
             color: var(--text-color);
             text-decoration: none;
             font-size: 18px;
             transition: color 0.3s ease;
         }
+
         nav ul li a:hover {
             color: #9d4edd;
         }
+
         h1 {
             text-align: center;
             color: #9d4edd;
             font-size: 2.5em;
             margin-bottom: 30px;
         }
+
         .book-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 30px;
         }
+
         .book-card {
             background-color: var(--secondary-color);
             border-radius: 10px;
@@ -63,32 +74,39 @@
             text-align: center;
             transition: transform 0.3s ease;
         }
+
         .book-card:hover {
             transform: translateY(-5px);
         }
+
         .book-cover {
             width: 150px;
             height: 225px;
             margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         .book-title {
             font-size: 1.2em;
             margin-bottom: 10px;
         }
+
         .book-author {
             font-style: italic;
             margin-bottom: 10px;
         }
+
         .book-price {
             font-weight: bold;
             color: #9d4edd;
         }
+
         .search-bar {
             display: flex;
             justify-content: center;
             margin-bottom: 30px;
         }
+
         #search-input {
             width: 50%;
             padding: 10px;
@@ -96,6 +114,7 @@
             border: none;
             border-radius: 5px 0 0 5px;
         }
+
         #search-button {
             padding: 10px 20px;
             font-size: 16px;
@@ -105,10 +124,12 @@
             border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
+
         @media (max-width: 768px) {
             .book-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
+
             .book-cover {
                 width: 120px;
                 height: 180px;
@@ -116,14 +137,15 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#bestsellers">Bestsellers</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="home">Home</a></li>
+                <li><a href="cat">Categories</a></li>
+                <li><a href="bs">Best sellers</a></li>
+                <li><a href="ab">About</a></li>
             </ul>
         </nav>
     </header>
@@ -161,11 +183,11 @@
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const searchButton = document.getElementById('search-button');
             const searchInput = document.getElementById('search-input');
 
-            searchButton.addEventListener('click', function() {
+            searchButton.addEventListener('click', function () {
                 const searchTerm = searchInput.value.toLowerCase();
                 const bookCards = document.querySelectorAll('.book-card');
 
@@ -183,4 +205,5 @@
         });
     </script>
 </body>
+
 </html>
